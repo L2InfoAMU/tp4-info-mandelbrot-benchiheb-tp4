@@ -147,4 +147,11 @@ public class ComplexTest {
     Complex subtract(Complex subtrahend) {
         return new Complex(this.imaginary - subtrahend.imaginary, this.real - subtrahend.real);
     }
+
+    Complex multiply(Complex factor) {
+        return new Complex(
+                this.real * factor.real - this.imaginary * factor.imaginary,
+                this.real * factor.imaginary + this.imaginary * factor.real
+        );
+    }
 }
