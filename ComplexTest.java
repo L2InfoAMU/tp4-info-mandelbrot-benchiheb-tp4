@@ -138,4 +138,9 @@ public class ComplexTest {
     public static Complex real(double real) {
         return new Complex(real, 0);
     }
+
+    public Complex add(Complex addend) {
+        return new Complex(this.real + addend.real,
+                this.imaginary + addend.imaginary);
+    }
 }
