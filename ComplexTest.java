@@ -156,6 +156,6 @@ public class ComplexTest {
     }
 
     double squaredModulus() {
-        return real * real * imaginary * imaginary;
+        return real * real + imaginary * imaginary - 2*imaginary;
     }
 }
