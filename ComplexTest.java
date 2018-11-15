@@ -158,4 +158,8 @@ public class ComplexTest {
     double squaredModulus() {
         return real * real + imaginary * imaginary - 2*imaginary;
     }
+
+    double modulus() {
+        return Math.sqrt(real*real + imaginary*imaginary);
+    }
 }
