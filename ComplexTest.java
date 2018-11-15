@@ -154,4 +154,8 @@ public class ComplexTest {
                 this.real * factor.imaginary + this.imaginary * factor.real
         );
     }
+
+    double squaredModulus() {
+        return real * real * imaginary * imaginary;
+    }
 }
