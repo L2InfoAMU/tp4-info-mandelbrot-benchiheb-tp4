@@ -2,6 +2,7 @@ package mandelbrot;
 
 import org.junit.jupiter.api.Test;
 
+import static mandelbrot.Complex.ZERO;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -47,7 +48,7 @@ public class ComplexTest {
     @Test
     void testOne(){
         assertEquals(1., Complex.ONE.getReal());
-        assertEquals(0., Complex.ZERO.getImaginary());
+        assertEquals(0., ZERO.getImaginary());
     }
 
     @Test
@@ -58,8 +59,8 @@ public class ComplexTest {
 
     @Test
     void testZero(){
-        assertEquals(0, Complex.ZERO.getReal());
-        assertEquals(0, Complex.ZERO.getImaginary());
+        assertEquals(0, ZERO.getReal());
+        assertEquals(0, ZERO.getImaginary());
     }
 
     @Test
@@ -80,12 +81,12 @@ public class ComplexTest {
 
     @Test
     void testReciprocalOfZero(){
-        assertThrows(ArithmeticException.class, ()->Complex.ZERO.reciprocal());
+        assertThrows(ArithmeticException.class, ()-> ZERO.reciprocal());
     }
 
     @Test
     void testSubstract(){
-        assertEquals(minusOne, Complex.ZERO.subtract(Complex.ONE));
+        assertEquals(minusOne, ZERO.subtract(Complex.ONE));
         assertEquals(oneMinusI, Complex.ONE.subtract(Complex.I));
         assertEquals(new Complex(real-1,imaginary-1),
                 new Complex(real, imaginary).subtract(onePlusI));
@@ -100,12 +101,12 @@ public class ComplexTest {
 
     @Test
     void testDivideByZero(){
-        assertThrows(ArithmeticException.class, ()->Complex.ONE.divide(Complex.ZERO));
+        assertThrows(ArithmeticException.class, ()->Complex.ONE.divide(ZERO));
     }
 
     @Test
     void testConjugate(){
-        assertEquals(Complex.ZERO, Complex.ZERO.conjugate());
+        assertEquals(ZERO, ZERO.conjugate());
         assertEquals(Complex.ONE, Complex.ONE.conjugate());
         assertEquals(onePlusI, oneMinusI.conjugate());
         assertEquals(new Complex(real, -imaginary), new Complex(-imaginary,imaginary).conjugate());
@@ -115,7 +116,7 @@ public class ComplexTest {
     void testRotation(){
         assertEquals(Complex.I, Complex.rotation(Math.PI/2));
         assertEquals(minusI, Complex.rotation(-Math.PI/2));
-        assertEquals(Complex.ZERO, Complex.rotation(0));
+        assertEquals(ZERO, Complex.rotation(0));
         assertEquals(new Complex(Math.sqrt(2)/2., Math.sqrt(2)/2.),
                 Complex.rotation(Math.PI/4));
         assertEquals(new Complex(1./2., Math.sqrt(3)/2.),
@@ -145,7 +146,7 @@ public class ComplexTest {
     }
 
     Complex subtract(Complex subtrahend) {
-        return new Complex(this.imaginary - subtrahend.imaginary, this.real - subtrahend.real);
+        return new Complex(this.real - subtrahend.real, this.imaginary - subtrahend.imaginary);
     }
 
     Complex multiply(Complex factor) {
@@ -162,4 +163,8 @@ public class ComplexTest {
     double modulus() {
         return Math.sqrt(real*real + imaginary*imaginary);
     }
+
+
+
+
 }
