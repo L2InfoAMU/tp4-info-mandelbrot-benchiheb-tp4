@@ -2,6 +2,7 @@ package mandelbrot;
 
 import org.junit.jupiter.api.Test;
 
+import static mandelbrot.Complex.ONE;
 import static mandelbrot.Complex.ZERO;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
@@ -154,6 +155,8 @@ public class ComplexTest {
                 this.real * factor.real - this.imaginary * factor.imaginary,
                 this.real * factor.imaginary + this.imaginary * factor.real
         );
+
+
     }
 
     double squaredModulus() {
@@ -163,6 +166,15 @@ public class ComplexTest {
     double modulus() {
         return Math.sqrt(real*real + imaginary*imaginary);
     }
+
+
+
+    public Complex scale(double lambda) {
+        return new Complex(lambda * real, lambda * imaginary);
+    }
+
+
+
 
 
 
