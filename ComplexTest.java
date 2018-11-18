@@ -188,9 +188,15 @@ public class ComplexTest {
     }
 
 
-
-
-
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || this.getClass() != o.getClass())
+            return false;
+        Complex complex = (Complex) o;
+        return Helpers.doubleCompare(complex.real, real) == 0 ||
+                Helpers.doubleCompare(complex.imaginary, imaginary) == 0;
+    }
 
 
 }
