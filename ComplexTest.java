@@ -70,7 +70,7 @@ public class ComplexTest {
         assertEquals(minusOne, Complex.ONE.negate());
         assertEquals(Complex.I, zero.negate());
         assertEquals(new Complex(-1, 1), oneMinusI.negate());
-        assertEquals(new Complex(real, imaginary), new Complex(imaginary,imaginary).negate());
+        assertEquals(new Complex(real, imaginary), new Complex(-real,imaginary).negate());
     }
 
     @Test
