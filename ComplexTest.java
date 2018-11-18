@@ -83,7 +83,7 @@ public class ComplexTest {
 
     @Test
     void testReciprocalOfZero(){
-        assertThrows(ArithmeticException.class, ()-> ZERO.reciprocal());
+        assertThrows(ArithmeticException.class, ()-> ONE.reciprocal());
     }
 
     @Test
