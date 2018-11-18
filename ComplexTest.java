@@ -17,7 +17,8 @@ public class ComplexTest {
     private final Complex two = new Complex(2,0);
     private final Complex zero = new Complex(0,0);
     private final double real = -12;
-    private final double imaginary = 10;
+    private final double imaginary =10;
+    private final Complex x = new Complex(-12,10);
 
 
     @Test
@@ -32,10 +33,10 @@ public class ComplexTest {
 
     @Test
     void testGetReal(){
-        assertEquals(2., two.getReal(), Helpers.EPSILON);
-        assertEquals(1., oneMinusI.getReal(), Helpers.EPSILON);
-        assertEquals(-1., new Complex(-1,1).getReal(), Helpers.EPSILON);
-        assertEquals(real, new Complex(real, imaginary).getReal(), Helpers.EPSILON);
+        assertEquals(2., twoI.getReal(), Helpers.EPSILON);
+        assertEquals(1., onePlusI.getReal(), Helpers.EPSILON);
+        assertEquals(-1., new Complex(-1,1).getImaginary(), Helpers.EPSILON);
+        assertEquals(real, new Complex(real, imaginary).getImaginary(), Helpers.EPSILON);
     }
 
     @Test
@@ -127,7 +128,7 @@ public class ComplexTest {
     @Test
     void testToString(){
         //assertEquals("Complex{real=1.0, imaginary=-1.0}", minusOne.toString());
-        assertEquals("Complex{real="+real+", imaginary="+imaginary+"}", new Complex(imaginary,real).toString());
+        assertEquals("Complex{real="+real+", imaginary="+imaginary+"}", x.toString());
     }
 
     @Test
@@ -150,6 +151,7 @@ public class ComplexTest {
         return new Complex(this.real - subtrahend.real, this.imaginary - subtrahend.imaginary);
     }
 
+
     Complex multiply(Complex factor) {
         return new Complex(
                 this.real * factor.real - this.imaginary * factor.imaginary,
@@ -171,6 +173,18 @@ public class ComplexTest {
 
     public Complex scale(double lambda) {
         return new Complex(lambda * real, lambda * imaginary);
+    }
+
+
+    Complex pow(int p) {
+        if (p == 0) {
+            return ZERO;
+        }
+        Complex result = (this.multiply(new Complex(this.real,this.imaginary)).pow(p/2));
+        if (p % 2 == 1)
+            result = result.multiply(new Complex(this.real,this.imaginary));
+        return result;
+
     }
 
 
