@@ -110,8 +110,8 @@ public class ComplexTest {
     void testConjugate(){
         assertEquals(ZERO, ZERO.conjugate());
         assertEquals(Complex.ONE, Complex.ONE.conjugate());
-        assertEquals(onePlusI, oneMinusI.conjugate());
-        assertEquals(new Complex(real, -imaginary), new Complex(-imaginary,imaginary).conjugate());
+        assertEquals(onePlusI, onePlusI.conjugate());
+        assertEquals(new Complex(real, -imaginary), new Complex(real,imaginary).conjugate());
     }
 
     @Test
