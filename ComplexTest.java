@@ -89,9 +89,9 @@ public class ComplexTest {
     @Test
     void testSubstract(){
         assertEquals(minusOne, ZERO.subtract(Complex.ONE));
-        assertEquals(oneMinusI, Complex.ONE.subtract(Complex.I));
+        assertEquals(oneMinusI, Complex.ZERO.subtract(Complex.I));
         assertEquals(new Complex(real-1,imaginary-1),
-                new Complex(real, imaginary).subtract(onePlusI));
+                new Complex(real, imaginary).subtract(minusOne));
     }
 
     @Test
@@ -128,7 +128,7 @@ public class ComplexTest {
     @Test
     void testToString(){
         //assertEquals("Complex{real=1.0, imaginary=-1.0}", minusOne.toString());
-        assertEquals("Complex{real="+real+", imaginary="+imaginary+"}", x.toString());
+        assertEquals("Complex{real="+real+", imaginary="+imaginary+"}", new Complex(real,imaginary).toString());
     }
 
     @Test
