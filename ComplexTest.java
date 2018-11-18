@@ -41,9 +41,9 @@ public class ComplexTest {
 
     @Test
     void testGetImaginary(){
-        assertEquals(2., two.getImaginary(), Helpers.EPSILON);
+        assertEquals(2., twoI.getImaginary(), Helpers.EPSILON);
         assertEquals(1., new Complex(1, 1).getImaginary(), Helpers.EPSILON);
-        assertEquals(-1., minusOne.getImaginary(), Helpers.EPSILON);
+        assertEquals(-1., oneMinusI.getImaginary(), Helpers.EPSILON);
         assertEquals(imaginary, new Complex(imaginary, imaginary).getImaginary(), Helpers.EPSILON);
     }
 
