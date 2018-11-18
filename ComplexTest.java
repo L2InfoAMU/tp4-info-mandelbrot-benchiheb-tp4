@@ -33,10 +33,10 @@ public class ComplexTest {
 
     @Test
     void testGetReal(){
-        assertEquals(2., twoI.getReal(), Helpers.EPSILON);
+        assertEquals(2., two.getReal(), Helpers.EPSILON);
         assertEquals(1., onePlusI.getReal(), Helpers.EPSILON);
-        assertEquals(-1., new Complex(-1,1).getImaginary(), Helpers.EPSILON);
-        assertEquals(real, new Complex(real, imaginary).getImaginary(), Helpers.EPSILON);
+        assertEquals(-1., new Complex(-1,1).getReal(), Helpers.EPSILON);
+        assertEquals(real, new Complex(real, imaginary).getReal(), Helpers.EPSILON);
     }
 
     @Test
