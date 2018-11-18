@@ -178,7 +178,7 @@ public class ComplexTest {
 
     Complex pow(int p) {
         if (p == 0) {
-            return ZERO;
+            return ONE;
         }
         Complex result = (this.multiply(new Complex(this.real,this.imaginary)).pow(p/2));
         if (p % 2 == 1)
