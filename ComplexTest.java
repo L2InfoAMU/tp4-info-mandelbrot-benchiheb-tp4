@@ -55,7 +55,7 @@ public class ComplexTest {
 
     @Test
     void testI(){
-        assertEquals(0, Complex.I.getImaginary());
+        assertEquals(0, Complex.ZERO.getImaginary());
         assertEquals(1, Complex.ONE.getReal());
     }
 
